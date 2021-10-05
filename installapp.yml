@@ -12,7 +12,7 @@
 
   - name: install Deb
     become: yes 
-    apt: deb=/tmp/{{item}} 
+    apt: deb=/tmp/ansible-pull-test/{{item}} 
     with_items:
       - my-apptest.1.0.0.ubuntu.18.04-x64.deb
 
