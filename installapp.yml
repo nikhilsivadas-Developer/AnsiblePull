@@ -1,6 +1,6 @@
 
 ---
-- hosts: all
+- hosts: localhost
 
   tasks:
   - name: install example application
@@ -12,7 +12,8 @@
   
   - name: install Deb
     become: yes 
-    apt: deb=https://github.com/nikhilsivadas-Developer/AnsiblePull/blob/6e0fa5e87105c7a74b4664c0e6b355c3373216f2/installapp.yml
+    apt: 
+      deb: https://github.com/nikhilsivadas-Developer/AnsiblePull/blob/6e0fa5e87105c7a74b4664c0e6b355c3373216f2/installapp.yml
 
 #  - name: install Deb
 #    become: yes 
