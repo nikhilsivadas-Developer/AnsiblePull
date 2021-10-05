@@ -10,15 +10,6 @@
       owner: root
       group: root
 
-  - name: copy deb packages
-    become: yes
-    action: copy
-    args:
-      src: /ansible-pull-test/my-apptest.1.0.0.ubuntu.18.04-x64.deb
-      dest: /tmp/
-      mode: 0644
-      backup: no
-
   - name: install Deb
     become: yes 
     apt: deb=/tmp/{{item}} 
