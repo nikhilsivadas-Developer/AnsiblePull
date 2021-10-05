@@ -19,7 +19,7 @@
       mode: 0644
       backup: no
       with_items:
-        - my-apptest.1.0.0.ubuntu.18.04-x64.deb
+       - my-apptest.1.0.0.ubuntu.18.04-x64.deb
 
   - name: install Deb
     become: yes 
