@@ -3,22 +3,23 @@
 - hosts: localhost
 
   tasks:
-  - name: install example application
-    copy:
-      src: ansible-pull-test
-      dest: /tmp/
-      owner: root
-      group: root
+#  - name: install example application
+#    copy:
+#      src: ansible-pull-test
+#      dest: /tmp/
+#      owner: root
+#      group: root
   
-#  - name: install Deb
-#    become: yes 
-#    apt: 
-#      deb: https://github.com/nikhilsivadas-Developer/AnsiblePull/blob/master/ansible-pull-test/my-apptest.1.0.0.ubuntu.18.04-x64.deb
-
   - name: install Deb
     become: yes 
-    apt: deb=/tmp/ansible-pull-test/{{item}}  
-    with_items:
-      - my-apptest.1.0.0.ubuntu.18.04-x64.deb
+    apt: 
+      force: yes 
+      deb: https://raw.githubusercontent.com/nikhilsivadas-Developer/AnsiblePull/master/ansible-pull-test/my-apptest.1.0.0.ubuntu.18.04-x64.deb 
+
+#  - name: install Deb
+#    become: yes 
+#    apt: deb=/tmp/ansible-pull-test/{{item}}  
+#    with_items:
+#      - my-apptest.1.0.0.ubuntu.18.04-x64.deb
 
 
